@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Engetal · Investimento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --dg-azul: #121325;
+  --dg-roxo: #6660B4;
+  --dg-rosa: #FFBEF5;
+  --dg-branco: #FFFFFF;
+  --dg-texto-suave: rgba(255, 255, 255, .72);
+  --dg-borda: rgba(255, 190, 245, .14);
+  --dg-raio: 16px;
+  --dg-titulo: 'Montserrat', Arial, sans-serif;
+  --dg-corpo: 'Quicksand', Calibri, Arial, sans-serif;
+}
+.dg-h1, .dg-h2, .dg-h3 { font-family: var(--dg-titulo); color: var(--dg-branco); margin: 0; letter-spacing: -.01em; }
+.dg-p { font-family: var(--dg-corpo); font-weight: 500; color: var(--dg-texto-suave); line-height: 1.6; margin: 0; }
+.dg-destaque { color: var(--dg-rosa); }
+.dg-secao { position: relative; overflow: hidden; isolation: isolate; background-color: var(--dg-azul); color: var(--dg-branco); }
+.dg-secao > * { position: relative; z-index: 1; }
+.dg-fundo-luz {
+  background-image:
+    radial-gradient(60% 50% at 100% 0%, rgba(102,96,180,.38), transparent 70%),
+    radial-gradient(45% 40% at 0% 100%, rgba(255,190,245,.14), transparent 70%);
+}
+.dg-icone { display: inline-grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: 14px;
+  background: rgba(102,96,180,.24); color: var(--dg-rosa); border: 1px solid rgba(255,190,245,.18); }
+.dg-icone svg { width: 24px; height: 24px; }
+.dg-assinatura { position: absolute; width: 22px; top: 24px; right: 24px; color: var(--dg-rosa); z-index: 2; }
+
+html, body { background: #121325 !important; margin: 0 !important; padding: 0 !important; }
+.pv { --azul:#121325; --roxo:#6660B4; --rosa:#FFBEF5; --txt:rgba(255,255,255,.74); --linha:rgba(255,190,245,.14); --card:rgba(255,255,255,.035);
+  --t:'Montserrat',Arial,sans-serif; --c:'Quicksand',Calibri,Arial,sans-serif;
+  background: var(--azul); color:#fff; font-family: var(--c); font-size:16px; line-height:1.6; overflow-x:hidden; }
+.pv *, .pv *::before, .pv *::after { box-sizing:border-box; }
+.pv h1,.pv h2,.pv h3,.pv h4 { font-family:var(--t); font-weight:700; color:#fff; margin:0; letter-spacing:normal; text-transform:none; }
+.pv p { margin:0 0 12px; }
+.pv a { color:inherit; }
+.pv .wrap { max-width:1040px; margin:0 auto; padding-inline:22px; position:relative; z-index:1; }
+.pv .sec { padding-block:84px; }
+.pv .num { font-family:var(--t); font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--rosa); display:flex; gap:10px; align-items:center; margin-bottom:12px; }
+.pv .num b { display:inline-grid; place-items:center; width:26px; height:26px; border-radius:8px; background:rgba(102,96,180,.35); color:#fff; font-size:12px; letter-spacing:0; }
+.pv .fonte { font-size:13px; color:rgba(255,255,255,.5); }
+.pv .nota { font-size:13px; color:rgba(255,255,255,.55); margin-top:14px; max-width:80ch; }
+.pv .topo { padding-block:22px 0; }
+.pv .topo .dg-logo { height:28px; width:auto; display:block; }
+.pv .cue { display:none; }
+.pv .ponte { margin:0 0 44px; font:600 clamp(20px,2.4vw,26px)/1.35 Montserrat,sans-serif; color:#fff; }
+.pv .ponte b { color:var(--rosa); white-space:nowrap; }
+
+/* planos */
+.pv .planos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; align-items:stretch; }
+.pv .planos.dois { grid-template-columns:repeat(2,minmax(0,1fr)); max-width:820px; }
+.pv .plano { position:relative; padding:28px 24px; border-radius:20px; background:var(--card); border:1px solid var(--linha); display:flex; flex-direction:column; }
+.pv .plano.sel { border:2px solid var(--rosa); background:rgba(102,96,180,.2); }
+.pv .plano.especial { background:linear-gradient(135deg,rgba(102,96,180,.45),rgba(255,190,245,.16)); border:1px solid rgba(255,190,245,.55); }
+.pv .plano.especial.sel { border:2px solid var(--rosa); }
+.pv .plano .rec { position:absolute; top:-12px; left:24px; font:800 11px var(--t); letter-spacing:.1em; text-transform:uppercase; background:var(--rosa); color:var(--azul); padding:5px 10px; border-radius:99px; }
+.pv .plano h3 { font-size:20px; }
+.pv .plano .para { color:var(--txt); font-size:14px; min-height:44px; margin:6px 0 16px; }
+.pv .plano .asst { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px; }
+.pv .plano .asst i { width:26px; height:26px; border-radius:8px; background:rgba(255,190,245,.14); color:var(--rosa); display:grid; place-items:center; }
+.pv .plano .conv { font:800 26px/1.1 var(--t); }
+.pv .plano .conv small { display:block; font:500 13px var(--c); color:var(--txt); margin-top:4px; }
+.pv .plano .preco { margin-top:18px; padding-top:16px; border-top:1px solid var(--linha); }
+.pv .plano .preco b { font:800 28px var(--t); color:var(--rosa); }
+.pv .plano .preco span { color:var(--txt); font-size:14px; }
+@media (max-width: 600px) { .pv .planos.dois { grid-template-columns:1fr; } }
+
+/* card paralelo / semsurpresa */
+.pv .card { background:var(--card); border:1px solid var(--linha); border-radius:16px; padding:22px; min-width:0; }
+.pv .card h3 { font-size:17px; font-weight:700; margin:14px 0 6px; }
+.pv .card p { color:var(--txt); font-size:15px; margin:0; }
+.pv .paral { margin-top:26px; display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:center; padding:22px; }
+.pv .paral .dg-icone { width:52px; height:52px; }
+.pv .semsurpresa { margin-top:14px; }
+.pv .semsurpresa ul { margin:8px 0 0; padding-left:18px; color:var(--txt); font-size:14.5px; display:grid; gap:4px; }
+.pv .semsurpresa b { color:#fff; }
+
+/* implantacao */
+.pv .implant { margin-top:26px; display:grid; grid-template-columns:1fr 1.3fr; gap:24px; padding:28px; }
+.pv .implant h3 { font-size:20px; margin:12px 0 8px; }
+.pv .implant ul { list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+.pv .implant li { display:grid; grid-template-columns:20px 1fr; gap:10px; font-size:14.5px; color:#E4E2F4; }
+.pv .implant li svg { width:18px; height:18px; color:var(--rosa); margin-top:2px; }
+.pv .implant .setup { margin-top:20px; padding:22px 24px; border-radius:16px; background:rgba(102,96,180,.3); border:1px solid rgba(255,190,245,.35); display:grid; gap:6px; }
+.pv .implant .setup span { font:700 12px var(--t); letter-spacing:.14em; text-transform:uppercase; color:var(--rosa); }
+.pv .implant .setup b { font-family:var(--t); font-size:clamp(40px,5vw,56px); line-height:1.05; color:#fff; }
+.pv .implant .setup small { font-size:14.5px; color:#E4E2F4; }
+@media (max-width:860px) { .pv .implant { grid-template-columns:1fr; } }
+
+footer.pv-footer { padding-block:34px; border-top:1px solid rgba(255,255,255,.06); color:rgba(255,255,255,.55); font-size:13px; }
+footer.pv-footer .wrap { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center; }
+footer.pv-footer .dg-logo { height:24px; width:auto; }
+
+@media print {
+  html, body { background:#121325 !important; }
+  .pv, .pv * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  .pv .sec, .pv .card, .pv .plano { break-inside:avoid; }
+}
+@media (max-width:860px) { .pv .planos, .pv .g2 { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="pv">
+  <div class="wrap topo">
+    <svg class="dg-logo" role="img" aria-label="dgenny" viewBox="0 0 752 196" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M262.485 68.3907C255.412 60.7099 246.08 56.8236 234.697 56.8236C221.49 56.8236 210.989 60.8016 203.503 68.6543C196.029 76.4841 192.246 86.8475 192.246 99.4462C192.246 112.045 196.041 122.454 203.526 129.997C211.012 137.541 221.089 141.37 233.481 141.37H235.786C246.906 141.049 255.985 137.013 262.829 129.367V139.627H277.319V25H262.473V68.3907H262.485ZM235.912 128.782C227.429 128.782 220.527 126.065 215.38 120.7C210.221 115.324 207.608 108.17 207.608 99.4348C207.608 90.1261 210.221 82.709 215.38 77.3898C220.527 72.082 227.429 69.388 235.912 69.388C244.395 69.388 251.021 72.1164 255.698 77.5044C260.433 82.9497 262.829 90.2064 262.829 99.0794C262.829 107.952 260.421 114.796 255.687 120.414C250.941 126.042 244.475 128.771 235.912 128.771V128.782Z" fill="white"/><path d="M358.437 68.6656C351.341 60.8014 341.895 56.812 330.305 56.812C317.099 56.812 306.598 60.79 299.112 68.6427C291.637 76.4725 287.854 86.8358 287.854 99.4346C287.854 112.033 291.649 122.443 299.135 129.986C306.621 137.529 316.697 141.358 329.09 141.358H331.394C342.227 141.037 351.181 137.082 358.093 129.596V154.541C358.093 156.742 357.612 157.384 357.463 157.533C357.279 157.717 356.626 158.164 354.643 158.164H320.366V171.439H354.643C361.2 171.439 365.763 170.247 368.606 167.793C371.506 165.283 372.927 160.95 372.927 154.553V58.5545H358.437V68.6656ZM331.52 128.782C323.037 128.782 316.136 126.065 310.988 120.7C305.83 115.323 303.216 108.17 303.216 99.4346C303.216 90.1259 305.83 82.7088 310.988 77.3896C316.136 72.0819 323.037 69.3879 331.52 69.3879C340.003 69.3879 346.629 72.1162 351.307 77.5043C356.041 82.9496 358.437 90.2062 358.437 99.0792C358.437 107.952 356.03 114.796 351.295 120.413C346.549 126.042 340.084 128.771 331.52 128.771V128.782Z" fill="white"/><path d="M457.106 72.506C454.137 67.8517 449.838 64.0228 444.313 61.1453C438.799 58.2679 432.264 56.812 424.882 56.812C412.008 56.812 401.782 60.79 394.457 68.6542C387.166 76.484 383.474 86.7785 383.474 99.2626C383.474 111.747 387.234 122.443 394.663 129.986C402.091 137.54 412.26 141.358 424.882 141.358C431.164 141.358 436.838 140.383 441.745 138.48C446.651 136.566 450.434 134.365 452.991 131.923C455.513 129.516 457.68 126.719 459.422 123.589C461.211 120.391 462.185 118.293 462.517 116.986C462.815 115.793 463.022 114.831 463.148 114.097L463.434 112.435H448.004L447.19 115.152C446.881 116.069 446.216 117.295 445.184 118.797C444.141 120.333 442.822 121.904 441.275 123.463C439.807 124.93 437.641 126.191 434.844 127.223C432.001 128.266 428.722 128.782 425.076 128.782C416.719 128.782 410.277 126.443 405.943 121.835C401.851 117.49 399.443 111.724 398.79 104.674H464.214L464.375 103.435C464.615 101.636 464.73 99.8817 464.73 98.208C464.73 94.6312 464.191 90.573 463.125 86.1365C462.047 81.6656 460.03 77.0686 457.118 72.4946L457.106 72.506ZM449.529 91.9258H398.824C399.627 85.976 402.114 80.7715 406.264 76.4267C410.712 71.7609 417.04 69.3879 425.054 69.3879C433.067 69.3879 438.913 71.715 443.132 76.312C447.293 80.8517 449.449 86.1021 449.54 91.9258H449.529Z" fill="white"/><path d="M515.446 56.812H514.724C508.338 56.9381 502.595 58.6233 497.631 61.8217C494.353 63.9425 491.659 66.476 489.572 69.3879V58.5545H475.254V139.627H490.099V98.3914C490.099 88.5095 492.358 81.2185 496.817 76.7018C501.265 72.1965 507.364 69.9152 514.93 69.9152C522.496 69.9152 527.701 71.8526 530.876 75.6586C534.121 79.5448 535.76 86.148 535.76 95.2617V139.627H550.778V95.2617C550.778 82.4452 547.912 72.7353 542.248 66.4072C536.54 60.0334 527.529 56.812 515.457 56.812H515.446Z" fill="white"/><path d="M604.451 56.812H603.729C597.344 56.9381 591.6 58.6233 586.648 61.8217C583.369 63.9425 580.675 66.476 578.589 69.3879V58.5545H564.27V139.627H579.105V98.3914C579.105 88.5095 581.363 81.2185 585.822 76.7018C590.27 72.1965 596.369 69.9152 603.935 69.9152C611.501 69.9152 616.706 71.8526 619.882 75.6586C623.126 79.5448 624.765 86.148 624.765 95.2617V139.627H639.783V95.2617C639.783 82.4452 636.917 72.7353 631.254 66.4072C625.545 60.0334 616.534 56.812 604.463 56.812H604.451Z" fill="white"/><path d="M707.454 58.5547L682.543 119.428L659.146 59.4603L658.79 58.5547H642.821L675.401 136.99L668.546 153.567C667.606 155.436 667.044 156.525 666.849 156.88C666.849 156.88 666.666 157.167 665.76 157.648C665.302 157.889 664.407 158.175 662.688 158.175H639.772V171.451H662.688C666.047 171.451 668.867 171.141 671.068 170.534C673.441 169.869 675.504 168.447 677.19 166.303C678.76 164.309 679.826 162.761 680.457 161.569C681.053 160.434 682.085 158.221 683.644 154.759L723.572 58.5662H707.454V58.5547Z" fill="white"/><path d="M721.887 128.392C721.887 126.306 720.603 125.24 718.058 125.24H714.114V135.27H715.479V131.476H719.193C720.087 131.476 720.19 131.946 720.19 132.301V135.27H721.554V132.301C721.554 131.591 721.234 131.098 720.592 130.845C721.463 130.318 721.898 129.493 721.898 128.392H721.887ZM720.523 128.392C720.523 129.665 719.72 130.284 718.058 130.284H715.479V126.432H718.058C719.72 126.432 720.523 127.074 720.523 128.392Z" fill="white"/><path d="M724.26 123.749C722.449 121.915 720.213 120.987 717.611 120.987C715.009 120.987 712.762 121.915 710.928 123.749C709.093 125.584 708.165 127.819 708.165 130.421C708.165 133.024 709.093 135.213 710.928 137.036C712.762 138.87 715.009 139.799 717.611 139.799C720.213 139.799 722.449 138.87 724.26 137.036C726.071 135.202 727 132.978 727 130.421C727 127.865 726.083 125.584 724.26 123.749ZM725.624 130.433C725.624 132.645 724.833 134.571 723.286 136.142C721.738 137.712 719.823 138.503 717.611 138.503C715.398 138.503 713.473 137.701 711.925 136.107C710.377 134.56 709.586 132.645 709.586 130.433C709.586 128.22 710.377 126.283 711.925 124.69C713.473 123.108 715.387 122.294 717.611 122.294C719.835 122.294 721.738 123.085 723.286 124.655C724.833 126.226 725.624 128.163 725.624 130.421V130.433Z" fill="white"/><path d="M152.81 80.9664L107.173 93.1984C102.003 94.5855 97.291 97.3024 93.5079 101.085C89.7248 104.869 87.0079 109.58 85.6208 114.75L73.3889 160.388L89.1631 164.618L101.063 120.207L135.729 154.874L147.285 143.318L112.618 108.652L157.029 96.7521L152.799 80.9779L152.81 80.9664Z" fill="#FFBEF5"/><path d="M108.652 36.051L96.4198 81.6885C95.0326 86.8587 92.3157 91.5704 88.5326 95.3534C84.7496 99.1365 80.0379 101.853 74.8677 103.241L29.2302 115.472L25 99.6982L69.4109 87.7988L34.7557 53.1206L46.3113 41.5651L80.978 76.2317L92.866 31.8208L108.64 36.051H108.652Z" fill="#FFBEF5"/></svg>
+  </div>
+
+  <section class="sec dg-secao dg-fundo-luz" id="investimento">
+    <svg fill="currentColor" aria-hidden="true" class="dg-assinatura" viewBox="0 0 158 159" xmlns="http://www.w3.org/2000/svg"><path d="M140.81 62.1455L95.1728 74.3774C90.0026 75.7646 85.291 78.4815 81.5079 82.2646C77.7248 86.0476 75.0079 90.7593 73.6208 95.9295L61.3889 141.567L77.1631 145.797L89.0626 101.386L123.729 136.053L135.285 124.497L100.618 89.8307L145.029 77.9312L140.799 62.157L140.81 62.1455Z" fill="currentColor"/><path d="M96.6517 17.2302L84.4198 62.8677C83.0326 68.0379 80.3157 72.7496 76.5326 76.5326C72.7496 80.3157 68.0379 83.0326 62.8677 84.4198L17.2302 96.6517L13 80.8774L57.4109 68.978L22.7557 34.2998L34.3113 22.7443L68.978 57.4109L80.866 13L96.6402 17.2302H96.6517Z" fill="currentColor"/></svg>
+    <div class="wrap">
+      <p class="ponte">E com a dgenny:</p>
+      <div class="num"><b>5</b> Investimento</div>
+      <div class="planos dois">
+        <div class="plano">
+          <h3>O que já foi conversado</h3><p class="para">Plano Essencial. Pacote de 250 negociações por mês, com 1 assistente para começar.</p>
+          <div class="asst"><i style="background:none;color:var(--txt);width:auto;font:700 12px var(--t);font-style:normal">1 assistentes · 1 números</i></div>
+          <div class="conv">250 negociações/mês<small>3.000 no ano, saldo anual · 1 assistentes</small></div>
+          <div class="preco"><b>R$ 3.500</b> <span>/mês</span><br><span>R$ 14,00 por negociação</span></div>
+        </div>
+        <div class="plano sel"><span class="rec">Recomendada</span>
+          <h3>O volume que acompanha o crescimento</h3><p class="para">Plano Essencial. Pacote de 400 negociações por mês, com 1 assistente — o volume que acompanha o crescimento das obras.</p>
+          <div class="asst"><i style="background:none;color:var(--txt);width:auto;font:700 12px var(--t);font-style:normal">1 assistentes · 1 números</i></div>
+          <div class="conv">400 negociações/mês<small>4.800 no ano, saldo anual · 1 assistentes</small></div>
+          <div class="preco"><b>R$ 4.000</b> <span>/mês</span><br><span>R$ 10,00 por negociação</span></div>
+        </div>
+        <div class="plano especial" style="grid-column:1 / -1"><span class="rec">Condição especial · até 30/10</span>
+          <h3>Fechando esta semana: o inicial por R$ 3.000 nos 3 primeiros meses</h3>
+          <p class="para">Plano Essencial (250 negociações/mês), com a mensalidade reduzida nos 3 primeiros meses — depois volta ao valor normal do plano.</p>
+          <div class="asst"><i style="background:none;color:var(--txt);width:auto;font:700 12px var(--t);font-style:normal">1 assistente · 1 número</i></div>
+          <div class="conv">250 negociações/mês<small>3.000 no ano, saldo anual · 1 assistente</small></div>
+          <div class="preco"><b>R$ 3.000</b> <span>/mês em nov, dez e jan</span><br><b>R$ 3.500</b> <span>/mês a partir de fev</span></div>
+        </div>
+        <div class="plano especial" style="grid-column:1 / -1"><span class="rec">Condição especial · até 30/10</span>
+          <h3>Fechando esta semana: a 2ª assistente sem custo</h3>
+          <p class="para">Plano recomendado (400 negociações/mês), com a mensalidade reduzida nos 3 primeiros meses e uma segunda assistente, com WhatsApp próprio, para separar o atendimento por compradora e acompanhar a performance de cada uma.</p>
+          <div class="asst"><i style="background:none;color:var(--txt);width:auto;font:700 12px var(--t);font-style:normal">2 assistentes · 2 números</i></div>
+          <div class="conv">400 negociações/mês<small>4.800 no ano, saldo anual · mesmo saldo do plano recomendado, agora com 2 assistentes</small></div>
+          <div class="preco"><b>R$ 3.500</b> <span>/mês em nov, dez e jan</span><br><b>R$ 4.000</b> <span>/mês a partir de fev</span><br><span>2ª assistente sem custo nos 3 primeiros meses · depois, R$ 800/mês</span></div>
+        </div>
+      </div>
+      <div class="card paral semsurpresa"><span class="dg-icone"><svg aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,1.5A10.5,10.5,0,1,0,22.5,12,10.51211,10.51211,0,0,0,12,1.5Zm0,1a9.45065,9.45065,0,0,1,6.344,2.449L15.51691,7.77606a5.48445,5.48445,0,0,0-7.03382,0L5.656,4.949A9.45065,9.45065,0,0,1,12,2.5ZM16.5,12A4.5,4.5,0,1,1,12,7.5,4.50491,4.50491,0,0,1,16.5,12Zm-14,0A9.45065,9.45065,0,0,1,4.949,5.656L7.77606,8.48309a5.48445,5.48445,0,0,0,0,7.03382L4.949,18.344A9.45065,9.45065,0,0,1,2.5,12ZM12,21.5a9.45065,9.45065,0,0,1-6.344-2.449l2.82708-2.82709a5.48445,5.48445,0,0,0,7.03382,0L18.344,19.051A9.45065,9.45065,0,0,1,12,21.5Zm7.051-3.156-2.82709-2.82708a5.48445,5.48445,0,0,0,0-7.03382L19.051,5.656a9.44145,9.44145,0,0,1,0,12.688Z"/></svg></span><div><h3 style="font-size:17px;margin-bottom:4px">Três opções, um critério simples</h3><p style="color:var(--txt);margin:0">O inicial e o recomendado rodam com 1 assistente; o terceiro já inclui até 3, com mais volume e um preço por negociação mais baixo — o caminho natural se a Engetal crescer mais rápido que o esperado.</p>
+        <ul><li><b>Número separado:</b> o fornecedor sabe quando fala com a assistente e quando fala com o comprador, e a cotação não se mistura com o resto do dia.</li>
+        <li><b>Saldo da empresa:</b> qualquer assistente consome do mesmo pacote, e o saldo pode ser usado conforme a demanda de cada mês.</li></ul></div></div>
+      <p class="nota">Valores do contrato anual. O saldo de negociações é do contrato inteiro e pode ser usado conforme a demanda de cada mês. Novas assistentes podem entrar a qualquer momento, até o limite do plano. Sem custo escondido: as mensagens da Meta são por conta da dgenny, e a integração com o Siecon não tem custo adicional da dgenny.</p>
+      <div class="card implant">
+        <div>
+          <span class="dg-icone"><svg aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,1.5A10.5,10.5,0,1,0,22.5,12,10.51211,10.51211,0,0,0,12,1.5Zm0,1a9.45065,9.45065,0,0,1,6.344,2.449L15.51691,7.77606a5.48445,5.48445,0,0,0-7.03382,0L5.656,4.949A9.45065,9.45065,0,0,1,12,2.5ZM16.5,12A4.5,4.5,0,1,1,12,7.5,4.50491,4.50491,0,0,1,16.5,12Zm-14,0A9.45065,9.45065,0,0,1,4.949,5.656L7.77606,8.48309a5.48445,5.48445,0,0,0,0,7.03382L4.949,18.344A9.45065,9.45065,0,0,1,2.5,12ZM12,21.5a9.45065,9.45065,0,0,1-6.344-2.449l2.82708-2.82709a5.48445,5.48445,0,0,0,7.03382,0L18.344,19.051A9.45065,9.45065,0,0,1,12,21.5Zm7.051-3.156-2.82709-2.82708a5.48445,5.48445,0,0,0,0-7.03382L19.051,5.656a9.44145,9.44145,0,0,1,0,12.688Z"/></svg></span>
+          <h3>Implantação: a Engetal começa operando, não configurando</h3>
+          <p style="color:var(--txt);margin:0">Um serviço feito uma única vez, para a assistente entrar no fluxo de compras que a Engetal já tem.</p>
+          <div class="setup">
+            <span>Setup inicial · valor único</span>
+            <b>R$ 4.500</b>
+            <small>Pago uma vez, o mesmo em qualquer um dos planos. Inclui todo o setup e o treinamento de até 4 pessoas para usar a dgenny.</small>
+          </div>
+        </div>
+        <ul>
+          <li><svg aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,22.5A10.5,10.5,0,1,0,1.5,12,10.5118,10.5118,0,0,0,12,22.5Zm0-20A9.5,9.5,0,1,1,2.5,12,9.51081,9.51081,0,0,1,12,2.5ZM8.64648,12.35352a.5.5,0,0,1,.707-.707L11,13.293l3.64648-3.64649a.5.5,0,0,1,.707.707l-4,4a.49984.49984,0,0,1-.707,0Z"/></svg><span>Integração com o Siecon: solicitações aprovadas, mapa de cotação e cadastro de fornecedor novo</span></li>
+          <li><svg aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,22.5A10.5,10.5,0,1,0,1.5,12,10.5118,10.5118,0,0,0,12,22.5Zm0-20A9.5,9.5,0,1,1,2.5,12,9.51081,9.51081,0,0,1,12,2.5ZM8.64648,12.35352a.5.5,0,0,1,.707-.707L11,13.293l3.64648-3.64649a.5.5,0,0,1,.707.707l-4,4a.49984.49984,0,0,1-.707,0Z"/></svg><span>Setup do sistema e ativação do WhatsApp oficial da Meta nos 1 números das assistentes</span></li>
+          <li><svg aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,22.5A10.5,10.5,0,1,0,1.5,12,10.5118,10.5118,0,0,0,12,22.5Zm0-20A9.5,9.5,0,1,1,2.5,12,9.51081,9.51081,0,0,1,12,2.5ZM8.64648,12.35352a.5.5,0,0,1,.707-.707L11,13.293l3.64648-3.64649a.5.5,0,0,1,.707.707l-4,4a.49984.49984,0,0,1-.707,0Z"/></svg><span>Parametrização da IA com a identidade da Engetal, os CNPJs de faturamento, os endereços das obras, frete e as condições de pagamento da empresa</span></li>
+          <li><svg aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,22.5A10.5,10.5,0,1,0,1.5,12,10.5118,10.5118,0,0,0,12,22.5Zm0-20A9.5,9.5,0,1,1,2.5,12,9.51081,9.51081,0,0,1,12,2.5ZM8.64648,12.35352a.5.5,0,0,1,.707-.707L11,13.293l3.64648-3.64649a.5.5,0,0,1,.707.707l-4,4a.49984.49984,0,0,1-.707,0Z"/></svg><span>Importação da base de fornecedores da Engetal, organizada em grupos por segmento, feita pelo nosso time, e aprovação dos modelos de mensagem junto à Meta</span></li>
+          <li><svg aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,22.5A10.5,10.5,0,1,0,1.5,12,10.5118,10.5118,0,0,0,12,22.5Zm0-20A9.5,9.5,0,1,1,2.5,12,9.51081,9.51081,0,0,1,12,2.5ZM8.64648,12.35352a.5.5,0,0,1,.707-.707L11,13.293l3.64648-3.64649a.5.5,0,0,1,.707.707l-4,4a.49984.49984,0,0,1-.707,0Z"/></svg><span>Treinamento de até 4 pessoas, entre compradores e gestão de suprimentos, para o uso da dgenny</span></li>
+          <li><svg aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,22.5A10.5,10.5,0,1,0,1.5,12,10.5118,10.5118,0,0,0,12,22.5Zm0-20A9.5,9.5,0,1,1,2.5,12,9.51081,9.51081,0,0,1,12,2.5ZM8.64648,12.35352a.5.5,0,0,1,.707-.707L11,13.293l3.64648-3.64649a.5.5,0,0,1,.707.707l-4,4a.49984.49984,0,0,1-.707,0Z"/></svg><span>Acompanhamento assistido com reuniões semanais nas primeiras semanas, para o time soltar o operacional e delegar com confiança</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pv-footer">
+    <div class="wrap">
+      <svg class="dg-logo" role="img" aria-label="dgenny" viewBox="0 0 752 196" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M262.485 68.3907C255.412 60.7099 246.08 56.8236 234.697 56.8236C221.49 56.8236 210.989 60.8016 203.503 68.6543C196.029 76.4841 192.246 86.8475 192.246 99.4462C192.246 112.045 196.041 122.454 203.526 129.997C211.012 137.541 221.089 141.37 233.481 141.37H235.786C246.906 141.049 255.985 137.013 262.829 129.367V139.627H277.319V25H262.473V68.3907H262.485ZM235.912 128.782C227.429 128.782 220.527 126.065 215.38 120.7C210.221 115.324 207.608 108.17 207.608 99.4348C207.608 90.1261 210.221 82.709 215.38 77.3898C220.527 72.082 227.429 69.388 235.912 69.388C244.395 69.388 251.021 72.1164 255.698 77.5044C260.433 82.9497 262.829 90.2064 262.829 99.0794C262.829 107.952 260.421 114.796 255.687 120.414C250.941 126.042 244.475 128.771 235.912 128.771V128.782Z" fill="white"/><path d="M358.437 68.6656C351.341 60.8014 341.895 56.812 330.305 56.812C317.099 56.812 306.598 60.79 299.112 68.6427C291.637 76.4725 287.854 86.8358 287.854 99.4346C287.854 112.033 291.649 122.443 299.135 129.986C306.621 137.529 316.697 141.358 329.09 141.358H331.394C342.227 141.037 351.181 137.082 358.093 129.596V154.541C358.093 156.742 357.612 157.384 357.463 157.533C357.279 157.717 356.626 158.164 354.643 158.164H320.366V171.439H354.643C361.2 171.439 365.763 170.247 368.606 167.793C371.506 165.283 372.927 160.95 372.927 154.553V58.5545H358.437V68.6656ZM331.52 128.782C323.037 128.782 316.136 126.065 310.988 120.7C305.83 115.323 303.216 108.17 303.216 99.4346C303.216 90.1259 305.83 82.7088 310.988 77.3896C316.136 72.0819 323.037 69.3879 331.52 69.3879C340.003 69.3879 346.629 72.1162 351.307 77.5043C356.041 82.9496 358.437 90.2062 358.437 99.0792C358.437 107.952 356.03 114.796 351.295 120.413C346.549 126.042 340.084 128.771 331.52 128.771V128.782Z" fill="white"/><path d="M457.106 72.506C454.137 67.8517 449.838 64.0228 444.313 61.1453C438.799 58.2679 432.264 56.812 424.882 56.812C412.008 56.812 401.782 60.79 394.457 68.6542C387.166 76.484 383.474 86.7785 383.474 99.2626C383.474 111.747 387.234 122.443 394.663 129.986C402.091 137.54 412.26 141.358 424.882 141.358C431.164 141.358 436.838 140.383 441.745 138.48C446.651 136.566 450.434 134.365 452.991 131.923C455.513 129.516 457.68 126.719 459.422 123.589C461.211 120.391 462.185 118.293 462.517 116.986C462.815 115.793 463.022 114.831 463.148 114.097L463.434 112.435H448.004L447.19 115.152C446.881 116.069 446.216 117.295 445.184 118.797C444.141 120.333 442.822 121.904 441.275 123.463C439.807 124.93 437.641 126.191 434.844 127.223C432.001 128.266 428.722 128.782 425.076 128.782C416.719 128.782 410.277 126.443 405.943 121.835C401.851 117.49 399.443 111.724 398.79 104.674H464.214L464.375 103.435C464.615 101.636 464.73 99.8817 464.73 98.208C464.73 94.6312 464.191 90.573 463.125 86.1365C462.047 81.6656 460.03 77.0686 457.118 72.4946L457.106 72.506ZM449.529 91.9258H398.824C399.627 85.976 402.114 80.7715 406.264 76.4267C410.712 71.7609 417.04 69.3879 425.054 69.3879C433.067 69.3879 438.913 71.715 443.132 76.312C447.293 80.8517 449.449 86.1021 449.54 91.9258H449.529Z" fill="white"/><path d="M515.446 56.812H514.724C508.338 56.9381 502.595 58.6233 497.631 61.8217C494.353 63.9425 491.659 66.476 489.572 69.3879V58.5545H475.254V139.627H490.099V98.3914C490.099 88.5095 492.358 81.2185 496.817 76.7018C501.265 72.1965 507.364 69.9152 514.93 69.9152C522.496 69.9152 527.701 71.8526 530.876 75.6586C534.121 79.5448 535.76 86.148 535.76 95.2617V139.627H550.778V95.2617C550.778 82.4452 547.912 72.7353 542.248 66.4072C536.54 60.0334 527.529 56.812 515.457 56.812H515.446Z" fill="white"/><path d="M604.451 56.812H603.729C597.344 56.9381 591.6 58.6233 586.648 61.8217C583.369 63.9425 580.675 66.476 578.589 69.3879V58.5545H564.27V139.627H579.105V98.3914C579.105 88.5095 581.363 81.2185 585.822 76.7018C590.27 72.1965 596.369 69.9152 603.935 69.9152C611.501 69.9152 616.706 71.8526 619.882 75.6586C623.126 79.5448 624.765 86.148 624.765 95.2617V139.627H639.783V95.2617C639.783 82.4452 636.917 72.7353 631.254 66.4072C625.545 60.0334 616.534 56.812 604.463 56.812H604.451Z" fill="white"/><path d="M707.454 58.5547L682.543 119.428L659.146 59.4603L658.79 58.5547H642.821L675.401 136.99L668.546 153.567C667.606 155.436 667.044 156.525 666.849 156.88C666.849 156.88 666.666 157.167 665.76 157.648C665.302 157.889 664.407 158.175 662.688 158.175H639.772V171.451H662.688C666.047 171.451 668.867 171.141 671.068 170.534C673.441 169.869 675.504 168.447 677.19 166.303C678.76 164.309 679.826 162.761 680.457 161.569C681.053 160.434 682.085 158.221 683.644 154.759L723.572 58.5662H707.454V58.5547Z" fill="white"/><path d="M152.81 80.9664L107.173 93.1984C102.003 94.5855 97.291 97.3024 93.5079 101.085C89.7248 104.869 87.0079 109.58 85.6208 114.75L73.3889 160.388L89.1631 164.618L101.063 120.207L135.729 154.874L147.285 143.318L112.618 108.652L157.029 96.7521L152.799 80.9779L152.81 80.9664Z" fill="#FFBEF5"/><path d="M108.652 36.051L96.4198 81.6885C95.0326 86.8587 92.3157 91.5704 88.5326 95.3534C84.7496 99.1365 80.0379 101.853 74.8677 103.241L29.2302 115.472L25 99.6982L69.4109 87.7988L34.7557 53.1206L46.3113 41.5651L80.978 76.2317L92.866 31.8208L108.64 36.051H108.652Z" fill="#FFBEF5"/></svg>
+      <span>dgenny® · Proposta Engetal · outubro de 2026</span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
