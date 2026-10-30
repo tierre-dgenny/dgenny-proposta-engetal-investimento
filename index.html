@@ -93,6 +93,18 @@ html, body { background: #121325 !important; margin: 0 !important; padding: 0 !i
 .pv .implant .setup small { font-size:14.5px; color:#E4E2F4; }
 @media (max-width:860px) { .pv .implant { grid-template-columns:1fr; } }
 
+/* quadro comparativo */
+.pv .comparativo { margin-top:26px; }
+.pv .comparativo table { width:100%; border-collapse:collapse; min-width:620px; }
+.pv .comparativo th, .pv .comparativo td { padding:12px 14px; text-align:left; font-size:14.5px; border-bottom:1px solid var(--linha); vertical-align:top; }
+.pv .comparativo thead th { font-family:var(--t); font-weight:700; color:#fff; font-size:13px; letter-spacing:.02em; }
+.pv .comparativo tbody th { color:var(--txt); font-weight:600; white-space:nowrap; }
+.pv .comparativo td { color:var(--txt); }
+.pv .comparativo .valor { color:#fff; font-family:var(--t); font-weight:700; }
+.pv .comparativo .col-rec { background:rgba(102,96,180,.2); }
+.pv .comparativo .rec-tag { display:inline-block; margin-top:4px; font:800 10px var(--t); letter-spacing:.08em; text-transform:uppercase; background:var(--rosa); color:var(--azul); padding:3px 8px; border-radius:99px; }
+.pv .comparativo .scroll { overflow-x:auto; }
+
 footer.pv-footer { padding-block:34px; border-top:1px solid rgba(255,255,255,.06); color:rgba(255,255,255,.55); font-size:13px; }
 footer.pv-footer .wrap { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center; }
 footer.pv-footer .dg-logo { height:24px; width:auto; }
@@ -144,6 +156,34 @@ footer.pv-footer .dg-logo { height:24px; width:auto; }
           <div class="preco"><b>R$ 3.500</b> <span>/mês em nov, dez e jan</span><br><b>R$ 4.000</b> <span>/mês a partir de fev</span><br><span>2ª assistente sem custo nos 3 primeiros meses · depois, R$ 800/mês</span></div>
         </div>
       </div>
+
+      <div class="card comparativo">
+        <h3 style="font-size:17px;margin:0 0 4px">Quadro comparativo</h3>
+        <p style="color:var(--txt);font-size:14px;margin:0 0 16px">Os três planos lado a lado, para decidir com uma olhada só.</p>
+        <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Essencial</th>
+              <th class="col-rec">Essencial Expandido<br><span class="rec-tag">Recomendado</span></th>
+              <th>Premium · 2 assistentes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Negociações/mês</th><td><span class="valor">250</span></td><td class="col-rec"><span class="valor">400</span></td><td><span class="valor">400</span></td></tr>
+            <tr><th scope="row">Saldo anual</th><td>3.000 negociações</td><td class="col-rec">4.800 negociações</td><td>4.800 negociações, saldo compartilhado</td></tr>
+            <tr><th scope="row">Assistentes</th><td>1</td><td class="col-rec">1</td><td>2</td></tr>
+            <tr><th scope="row">Números WhatsApp</th><td>1</td><td class="col-rec">1</td><td>2 · atendimento separado por compradora</td></tr>
+            <tr><th scope="row">Mensalidade</th><td><span class="valor">R$ 3.500</span></td><td class="col-rec"><span class="valor">R$ 4.000</span></td><td><span class="valor">R$ 4.800</span><br><span style="font-size:12.5px">R$ 4.000 + R$ 800 da 2ª assistente</span></td></tr>
+            <tr><th scope="row">Custo por negociação</th><td>R$ 14,00</td><td class="col-rec">R$ 10,00</td><td>R$ 12,00</td></tr>
+            <tr><th scope="row">Implantação (única)</th><td>R$ 4.500</td><td class="col-rec">R$ 4.500</td><td>R$ 4.500</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="nota" style="margin-top:14px">Condições especiais válidas até 30/10 (ver acima) reduzem a mensalidade nos 3 primeiros meses — esta tabela mostra o valor normal de cada plano a partir do 4º mês.</p>
+      </div>
+
       <div class="card paral semsurpresa"><span class="dg-icone"><svg aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,1.5A10.5,10.5,0,1,0,22.5,12,10.51211,10.51211,0,0,0,12,1.5Zm0,1a9.45065,9.45065,0,0,1,6.344,2.449L15.51691,7.77606a5.48445,5.48445,0,0,0-7.03382,0L5.656,4.949A9.45065,9.45065,0,0,1,12,2.5ZM16.5,12A4.5,4.5,0,1,1,12,7.5,4.50491,4.50491,0,0,1,16.5,12Zm-14,0A9.45065,9.45065,0,0,1,4.949,5.656L7.77606,8.48309a5.48445,5.48445,0,0,0,0,7.03382L4.949,18.344A9.45065,9.45065,0,0,1,2.5,12ZM12,21.5a9.45065,9.45065,0,0,1-6.344-2.449l2.82708-2.82709a5.48445,5.48445,0,0,0,7.03382,0L18.344,19.051A9.45065,9.45065,0,0,1,12,21.5Zm7.051-3.156-2.82709-2.82708a5.48445,5.48445,0,0,0,0-7.03382L19.051,5.656a9.44145,9.44145,0,0,1,0,12.688Z"/></svg></span><div><h3 style="font-size:17px;margin-bottom:4px">Três opções, um critério simples</h3><p style="color:var(--txt);margin:0">O inicial e o recomendado rodam com 1 assistente; o terceiro já inclui até 3, com mais volume e um preço por negociação mais baixo — o caminho natural se a Engetal crescer mais rápido que o esperado.</p>
         <ul><li><b>Número separado:</b> o fornecedor sabe quando fala com a assistente e quando fala com o comprador, e a cotação não se mistura com o resto do dia.</li>
         <li><b>Saldo da empresa:</b> qualquer assistente consome do mesmo pacote, e o saldo pode ser usado conforme a demanda de cada mês.</li></ul></div></div>
